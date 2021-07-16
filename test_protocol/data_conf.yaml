@@ -1,6 +1,6 @@
 LFW:
     pairs_file_path: /content/Semi-Siamese-Training/datasets/LFW/test/pairs.txt
-    cropped_face_folder: /content/Semi-Siamese-Training/datasets/LFW/test/images/cropped/
+    cropped_face_folder: /content/Semi-Siamese-Training/datasets/LFW/test/cropped-faces/
     image_list_file_path: /content/Semi-Siamese-Training/datasets/LFW/test/lfw_face_info.txt
 CPLFW:
     pairs_file_path: /export2/wangjun492/face_database/facex-zoo/private_file/test_data/cplfw/ori_data/pairs_CPLFW.txt

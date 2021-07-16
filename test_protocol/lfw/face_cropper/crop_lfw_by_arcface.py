@@ -9,7 +9,7 @@ import math
 import multiprocessing
 import cv2
 import sys
-sys.path.append('/export/home/wangjun492/wj_armory/faceX-Zoo/face_sdk')
+sys.path.append('/content/FaceX-Zoo/face_sdk')
 from core.image_cropper.arcface_cropper.FaceRecImageCropper import FaceRecImageCropper
 from utils.lms_trans import lms106_2_lms25
 
