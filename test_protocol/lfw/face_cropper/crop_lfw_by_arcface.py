@@ -37,8 +37,8 @@ def crop_facescrub(facescrub_root, facescrub_lms_file, target_folder):
         line = facescrub_lms_file_buf.readline().strip()
 
 if __name__ == '__main__':
-    facescrub_root = '/export2/wangjun492/face_database/facex-zoo/private_file/test_data/megaface/facescrub_mask'
-    facescrub_lms_file = '/export2/wangjun492/face_database/facex-zoo/share_file/test_data/megaface/facescrub_face_info.txt'
-    target_folder = '/export2/wangjun492/face_database/facex-zoo/private_file/test_data/megaface/face_crop_arcface/masked_facescrub_crop'
+    facescrub_root = '/content/Semi-Siamese-Training/datasets/LFW/test/src-images'
+    facescrub_lms_file = '/content/Semi-Siamese-Training/datasets/LFW/test/lfw_face_info.txt'
+    target_folder = '/content/Semi-Siamese-Training/datasets/LFW/test/cropped-faces'
 
     crop_facescrub(facescrub_root, facescrub_lms_file, target_folder)
