@@ -7,16 +7,17 @@
 import sys
 import yaml
 sys.path.append('../../')
-from backbone.ResNets import Resnet
-from backbone.MobileFaceNets import MobileFaceNet
-from backbone.EfficientNets import EfficientNet
-from backbone.EfficientNets import efficientnet
-from backbone.HRNet import HighResolutionNet
-from backbone.GhostNet import GhostNet
-from backbone.AttentionNets import ResidualAttentionNet
-from backbone.TF_NAS import TF_NAS_A
-from backbone.resnest.resnest import ResNeSt
-from backbone.ReXNets import ReXNetV1
+sys.path.append('/content/FaceX-Zoo/data_processor')
+from ResNets import Resnet
+from MobileFaceNets import MobileFaceNet
+from EfficientNets import EfficientNet
+from EfficientNets import efficientnet
+from HRNet import HighResolutionNet
+from GhostNet import GhostNet
+from AttentionNets import ResidualAttentionNet
+from TF_NAS import TF_NAS_A
+from resnest.resnest import ResNeSt
+from ReXNets import ReXNetV1
 
 class BackboneFactory:
     """Factory to produce backbone according the backbone_conf.yaml.

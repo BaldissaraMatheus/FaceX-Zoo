@@ -14,9 +14,10 @@ from lfw.pairs_parser import PairsParserFactory
 from lfw.lfw_evaluator import LFWEvaluator
 from utils.model_loader import ModelLoader
 from utils.extractor.feature_extractor import CommonExtractor
-sys.path.append('..')
-from data_processor.test_dataset import CommonTestDataset
-from backbone.backbone_def import BackboneFactory
+sys.path.append('/content/FaceX-Zoo/data_processor')
+from test_dataset import CommonTestDataset
+sys.path.append('/content/FaceX-Zoo/backbone')
+from backbone_def import BackboneFactory
 
 def accu_key(elem):
     return elem[1]
