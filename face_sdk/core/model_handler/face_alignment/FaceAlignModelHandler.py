@@ -3,8 +3,9 @@
 @date: 20201023
 @contact: jun21wangustc@gmail.com 
 """
+import sys
 import logging.config
-logging.config.fileConfig("config/logging.conf")
+logging.config.fileConfig("FaceX-Zoo/face_sdk/config/logging.conf")
 logger = logging.getLogger('sdk')
 
 import cv2
@@ -12,8 +13,10 @@ import torch
 import numpy as np
 import torch.backends.cudnn as cudnn
 
-from core.model_handler.BaseModelHandler import BaseModelHandler
-from utils.BuzException import *
+sys.path.append('/content/FaceX-Zoo/face_sdk/core/model_handler')
+from BaseModelHandler import BaseModelHandler
+sys.path.append('/content/FaceX-Zoo/face_sdk/utils')
+from BuzException import *
 from torchvision import transforms
 
 class FaceAlignModelHandler(BaseModelHandler):

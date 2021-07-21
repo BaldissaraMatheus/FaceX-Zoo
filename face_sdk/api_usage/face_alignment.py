@@ -6,16 +6,19 @@
 import sys
 sys.path.append('.')
 import logging.config
-logging.config.fileConfig("config/logging.conf")
+logging.config.fileConfig("FaceX-Zoo/face_sdk/config/logging.conf")
 logger = logging.getLogger('api')
 
 import yaml
 import cv2
 import numpy as np
-from core.model_loader.face_alignment.FaceAlignModelLoader import FaceAlignModelLoader
-from core.model_handler.face_alignment.FaceAlignModelHandler import FaceAlignModelHandler
 
-with open('config/model_conf.yaml') as f:
+sys.path.append('/content/FaceX-Zoo/face_sdk/core/model_loader/face_alignment')
+from FaceAlignModelLoader import FaceAlignModelLoader
+sys.path.append('/content/FaceX-Zoo/face_sdk/core/model_handler/face_alignment')
+from FaceAlignModelHandler import FaceAlignModelHandler
+
+with open('/content/FaceX-Zoo/face_sdk/config/model_conf.yaml') as f:
     model_conf = yaml.load(f)
 
 if __name__ == '__main__':
@@ -50,8 +53,8 @@ if __name__ == '__main__':
     faceAlignModelHandler = FaceAlignModelHandler(model, 'cuda:0', cfg)
 
     # read image
-    image_path = 'api_usage/test_images/test1.jpg'
-    image_det_txt_path = 'api_usage/test_images/test1_detect_res.txt'
+    image_path = '/content/FaceX-Zoo/face_sdk/api_usage/test_images/test1.jpg'
+    image_det_txt_path = '/content/FaceX-Zoo/face_sdk/api_usage/test_images/test1_detect_res.txtt'
     image = cv2.imread(image_path, cv2.IMREAD_COLOR)
     with open(image_det_txt_path, 'r') as f:
         lines = f.readlines()
@@ -61,8 +64,8 @@ if __name__ == '__main__':
             det = np.asarray(list(map(int, line[0:4])), dtype=np.int32)
             landmarks = faceAlignModelHandler.inference_on_image(image, det)
 
-            save_path_img = 'api_usage/temp/test1_' + 'landmark_res' + str(i) + '.jpg'
-            save_path_txt = 'api_usage/temp/test1_' + 'landmark_res' + str(i) + '.txt'
+            save_path_img = '/content/FaceX-Zoo/face_sdk/api_usage/temp/test1_' + 'landmark_res' + str(i) + '.jpg'
+            save_path_txt = '/content/FaceX-Zoo/face_sdk/api_usage/temp/test1_' + 'landmark_res' + str(i) + '.txt'
             image_show = image.copy()
             with open(save_path_txt, "w") as fd:
                 for (x, y) in landmarks.astype(np.int32):

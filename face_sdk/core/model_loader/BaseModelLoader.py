@@ -5,9 +5,9 @@
 """
 import os
 import sys
-sys.path.append('models/network_def')
+sys.path.append('/content/FaceX-Zoo/face_sdk/models/network_def')
 import logging.config
-logging.config.fileConfig("config/logging.conf")
+logging.config.fileConfig("FaceX-Zoo/face_sdk/config/logging.conf")
 logger = logging.getLogger('sdk') 
 from abc import ABCMeta, abstractmethod
 

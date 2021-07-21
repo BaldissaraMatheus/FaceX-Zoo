@@ -3,13 +3,15 @@
 @date: 20201023
 @contact: jun21wangustc@gmail.com 
 """
+import sys
 import logging.config
-logging.config.fileConfig("config/logging.conf")
+logging.config.fileConfig("FaceX-Zoo/face_sdk/config/logging.conf")
 logger = logging.getLogger('sdk')
 
 import torch
 
-from core.model_loader.BaseModelLoader import BaseModelLoader
+sys.path.append('/content/FaceX-Zoo/face_sdk/core/model_loader')
+from BaseModelLoader import BaseModelLoader
 
 class FaceAlignModelLoader(BaseModelLoader):
     def __init__(self, model_path, model_category, model_name, meta_file='model_meta.json'):
