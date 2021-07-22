@@ -23,7 +23,7 @@ with open('/content/FaceX-Zoo/face_sdk/config/model_conf.yaml') as f:
 
 if __name__ == '__main__':
     # common setting for all model, need not modify.
-    model_path = 'models'
+    model_path = '/content/FaceX-Zoo/face_sdk/models'
 
     # model setting, modified along with model
     scene = 'non-mask'
