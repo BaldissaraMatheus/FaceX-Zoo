@@ -54,6 +54,7 @@ class ImageDataset(Dataset):
         train_file_buf = open(train_file)
         line = train_file_buf.readline().strip()
         while line:
+            # ValueError: invalid literal for int() with base 10: '85,58,172,186'
             image_path, image_label = line.split(' ')
             self.train_list.append((image_path, int(image_label)))
             line = train_file_buf.readline().strip()

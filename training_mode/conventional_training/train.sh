@@ -1,11 +1,11 @@
 mkdir 'log'
-python train.py \
-    --data_root '/export2/wangjun492/face_database/facex-zoo/private_file/train_data/deepglint/msra_crop' \
-    --train_file '/export2/wangjun492/face_database/facex-zoo/private_file/train_data/deepglint/msceleb_deepglint_train_file.txt' \
+python /content/FaceX-Zoo/training_mode/conventional_training/train.py \
+    --data_root '/content/Semi-Siamese-Training/datasets/LFW/test/cropped-faces' \
+    --train_file '/content/Semi-Siamese-Training/datasets/LFW/test/lfw_face_info.txt' \
     --backbone_type 'MobileFaceNet' \
-    --backbone_conf_file '../backbone_conf.yaml' \
+    --backbone_conf_file '/content/FaceX-Zoo/training_mode/backbone_conf.yaml' \
     --head_type 'MagFace' \
-    --head_conf_file '../head_conf.yaml' \
+    --head_conf_file '/content/FaceX-Zoo/training_mode/head_conf.yaml' \
     --lr 0.1 \
     --out_dir 'out_dir' \
     --epoches 18 \

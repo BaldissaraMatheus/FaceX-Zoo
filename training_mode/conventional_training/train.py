@@ -14,10 +14,12 @@ from torch import optim
 from torch.utils.data import DataLoader
 from tensorboardX import SummaryWriter
 
-sys.path.append('../../')
-from utils.AverageMeter import AverageMeter
-from data_processor.train_dataset import ImageDataset
+sys.path.append('/content/FaceX-Zoo')
 from backbone.backbone_def import BackboneFactory
+from utils.AverageMeter import AverageMeter
+sys.path.append('/content/FaceX-Zoo/data_processor')
+from data_processor.train_dataset import ImageDataset
+sys.path.append('/content/FaceX-Zoo/head')
 from head.head_def import HeadFactory
 
 logger.basicConfig(level=logger.INFO, 
@@ -179,5 +181,6 @@ if __name__ == '__main__':
     
     logger.info('Start optimization.')
     logger.info(args)
-    train(args)
+    # Sem foo = ValueError: too many values to unpack (expected 2)
+    foo1, foo2 = train(args)
     logger.info('Optimization done!')

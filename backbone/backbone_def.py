@@ -8,6 +8,7 @@ import sys
 import yaml
 sys.path.append('../../')
 sys.path.append('/content/FaceX-Zoo/data_processor')
+sys.path.append('/content/FaceX-Zoo/backbone')
 from ResNets import Resnet
 from MobileFaceNets import MobileFaceNet
 from EfficientNets import EfficientNet
