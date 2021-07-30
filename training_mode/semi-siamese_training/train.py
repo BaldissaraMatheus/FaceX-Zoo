@@ -14,7 +14,7 @@ from torch import optim
 from torch.utils.data import DataLoader
 from tensorboardX import SummaryWriter
 
-sys.path.append('../../')
+sys.path.append('/content/FaceX-Zoo')
 from utils.AverageMeter import AverageMeter
 from data_processor.train_dataset import ImageDataset_SST
 from backbone.backbone_def import BackboneFactory

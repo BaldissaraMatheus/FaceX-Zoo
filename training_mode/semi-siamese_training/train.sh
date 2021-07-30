@@ -1,11 +1,11 @@
 mkdir 'log'
-python train.py \
-    --data_root '/export2/wangjun492/face_database/facex-zoo/private_file/train_data/deepglint/msra_crop' \
-    --train_file '/export2/wangjun492/face_database/facex-zoo/share_file/train_data/MS-Celeb-1M-v1c-r-shallow_train_list.txt' \
+python /content/FaceX-Zoo/training_mode/semi-siamese_training/train.py \
+    --data_root '/content/Semi-Siamese-Training/datasets/LFW/test/cropped-faces' \
+    --train_file '/content/Semi-Siamese-Training/datasets/LFW/test/lfw_face_info.txt' \
     --backbone_type 'MobileFaceNet' \
-    --backbone_conf_file '../backbone_conf.yaml' \
+    --backbone_conf_file '/content/FaceX-Zoo/training_mode/backbone_conf.yaml' \
     --head_type 'SST_Prototype' \
-    --head_conf_file '../head_conf.yaml' \
+    --head_conf_file '/content/FaceX-Zoo/training_mode/head_conf.yaml' \
     --lr 0.1 \
     --out_dir 'out_dir' \
     --epoches 250 \
@@ -19,5 +19,5 @@ python train.py \
     --save_freq 10 \
     --evaluate \
     --test_set 'LFW' \
-    --test_data_conf_file '/export/home/wangjun492/wj_armory/FaceX-Zoo/test_protocol/data_conf.yaml' \
+    --test_data_conf_file '/content/FaceX-Zoo/test_protocol/data_conf.yaml' \
     2>&1 | tee log/log.log
